@@ -21,16 +21,16 @@ CREATE TABLE Roster(BeginDate DATE NOT NULL, PlayerID INT FOREIGN KEY REFERENCES
 
 -- Users, logins, and roles --
 
-CREATE LOGIN rgoodell WITH PASSWORD = 'password123' MUST_CHANGE,
+CREATE LOGIN rgoodell WITH PASSWORD = 'password123',
 	DEFAULT_DATABASE = footballLeague;
 
 CREATE ROLE commissioner;
 
-GRANT ALL
+GRANT SELECT, INSERT, UPDATE, DELETE, REFERENCES, ALTER
 ON DATABASE::footballLeague
 TO commissioner;
 
-ALTER SERVER ROLE commissioner ADD MEMBER rgoodell;
+ALTER ROLE commissioner ADD MEMBER rgoodell;
 
 CREATE ROLE coach;
 
@@ -44,10 +44,10 @@ TO coach;
 
 CREATE ROLE teamOwner;
 
-GRANT ALL
+GRANT SELECT, INSERT, UPDATE, DELETE, REFERENCES, ALTER
 ON Team
 TO teamOwner;
 
-GRANT ALL
+GRANT SELECT, INSERT, UPDATE, DELETE, REFERENCES, ALTER
 ON Roster
 TO teamOwner;
