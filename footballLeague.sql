@@ -16,3 +16,10 @@ CREATE TABLE Stats(MatchupID INT FOREIGN KEY REFERENCES Matchup(MatchupID), Team
 CREATE TABLE Roster(BeginDate DATE NOT NULL, PlayerID INT FOREIGN KEY REFERENCES Player(PlayerID), TeamID INT
 			FOREIGN KEY REFERENCES Team(TeamID),Position VARCHAR(25), Number INT, EndDate DATE, PRIMARY KEY
 			(BeginDate, PlayerID))
+
+-- Users, logins, and roles --
+
+CREATE LOGIN commissioner WITH PASSWORD = 'password123' MUST_CHANGE,
+	DEFAULT_DATABASE = footballLeague;
+
+CREATE USER commissioner;
