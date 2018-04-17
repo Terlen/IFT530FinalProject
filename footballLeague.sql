@@ -4,6 +4,8 @@ CREATE DATABASE footballLeague;
 GO
 USE footballLeague;
 GO
+
+-- Table Creation --
 CREATE TABLE Team(TeamID INT PRIMARY KEY NOT NULL, Name VARCHAR(50), Location VARCHAR(50));
 CREATE TABLE Stadium(StadiumID INT PRIMARY KEY NOT NULL, StadiumName VARCHAR(50), Address VARCHAR(50));
 CREATE TABLE Player(PlayerID INT PRIMARY KEY NOT NULL, FirstName VARCHAR(25) NOT NULL, LastName VARCHAR(25) 
@@ -29,3 +31,23 @@ ON DATABASE::footballLeague
 TO commissioner;
 
 ALTER SERVER ROLE commissioner ADD MEMBER rgoodell;
+
+CREATE ROLE coach;
+
+GRANT SELECT
+ON Roster
+TO coach;
+
+GRANT SELECT, UPDATE
+ON [Stats]
+TO coach;
+
+CREATE ROLE teamOwner;
+
+GRANT ALL
+ON Team
+TO teamOwner;
+
+GRANT ALL
+ON Roster
+TO teamOwner;
