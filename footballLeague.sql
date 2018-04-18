@@ -1,5 +1,5 @@
 --use master
---DROP DATABASE footballLeague;
+DROP DATABASE footballLeague;
 CREATE DATABASE footballLeague;
 GO
 USE footballLeague;
@@ -29,6 +29,8 @@ CREATE ROLE commissioner;
 GRANT SELECT, INSERT, UPDATE, DELETE, REFERENCES, ALTER
 ON DATABASE::footballLeague
 TO commissioner;
+
+CREATE USER rgoodell FOR LOGIN rgoodell;
 
 ALTER ROLE commissioner ADD MEMBER rgoodell;
 
