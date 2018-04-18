@@ -19,6 +19,9 @@ CREATE TABLE Roster(BeginDate DATE NOT NULL, PlayerID INT FOREIGN KEY REFERENCES
 			FOREIGN KEY REFERENCES Team(TeamID),Position VARCHAR(25), Number INT, EndDate DATE, PRIMARY KEY
 			(BeginDate, PlayerID))
 
+CREATE TABLE Score(MatchupID INT FOREIGN KEY REFERENCES Matchup(MatchupID), TeamID INT FOREIGN KEY REFERENCES Team(TeamID),
+			Score INT NOT NULL, PRIMARY KEY (MatchupID, TeamID))
+
 -- Users, logins, and roles --
 
 CREATE LOGIN rgoodell WITH PASSWORD = 'password123',
