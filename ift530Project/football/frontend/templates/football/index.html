@@ -12,11 +12,23 @@
 	{% block body %}
 
 	<div class="container">
-			<h1>Home</h1>
+		<h1>Home</h1>
 		<p>Congrats, you make it home!</p>
-
 		
+		<div class="list-group">
+		  <a href="#" class="list-group-item list-group-item-action active">Home</a>
+		  <a href="{% url 'registerplayer' %}" class="list-group-item list-group-item-action">Register Player</a>
+		  <a href="{% url 'registerteam' %}" class="list-group-item list-group-item-action">Register Team</a>
+		  <a href="{% url 'registerstadium' %}" class="list-group-item list-group-item-action">Register Stadium</a>
+		  <a href="{% url 'registermatch' %}" class="list-group-item list-group-item-action">Register Match up</a>
+		  <a href="{% url 'registerroster' %}" class="list-group-item list-group-item-action">Register Roster</a>
+		  <a href="{% url 'registerstat' %}" class="list-group-item list-group-item-action">Register Stat</a>
+		  <a href="{% url 'registerscore' %}" class="list-group-item list-group-item-action">Register Score</a>
+		</div>
+
 	</div>
+
+
 	
 	{% endblock %}
 
