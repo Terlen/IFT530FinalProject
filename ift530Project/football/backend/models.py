@@ -1,21 +1,16 @@
 from django.db import models
-
+from django.contrib.auth.models import User
 
 # Create your models here.
 
-# class User(models.Model):
-#     # these names are the columns
-#     username = models.CharField(max_length=100)
-#     fname = models.CharField(max_length=100)
-#     lname = models.CharField(max_length=100)
-#     mname = models.CharField(max_length=100)
-#     address = models.TextField()
-#     officenum = models.CharField(max_length=15)
-#     cellnum = models.CharField(max_length=15)
-#     email = models.EmailField()
-	
-# 	def __str__(self):
-# 		return ("Username: %s, First Name: %s, Mididle Name: %s, Last Name: %s, Address: %s, Office Number: %s, Cell Number: %s, Email: %s " % (self.username, self.fname, self.mname, self.lname, self.address, self.officenum, self.cellnum, self.email))
+# Haven't really used this one
+# Based on https://youtu.be/lxSZevvkcc4
+class UserProfile(models.Model):
+	user = models.OneToOneField(User, on_delete=models.CASCADE)
+	description = models.CharField(max_length=100, default='')
+	city = models.CharField(max_length=100, default='')
+	website = models.URLField(default='')
+	phone = models.IntegerField(default=0)
 
 
 class Team(models.Model):

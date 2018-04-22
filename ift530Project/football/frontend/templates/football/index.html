@@ -1,12 +1,24 @@
+{% extends 'base.html' %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Football Front</title>
+	{% block head %}
+	<title>Home</title>
+	{% endblock %}
 </head>
 <body>
 
-	<h1>This is the Front Page of Football!!</h1>
-    
+	{% block body %}
+
+	<div class="container">
+			<h1>Home</h1>
+		<p>Congrats, you make it home!</p>
+
+		
+	</div>
+	
+	{% endblock %}
+
 </body>
 </html>
