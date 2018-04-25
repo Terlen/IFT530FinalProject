@@ -15,4 +15,11 @@ urlpatterns = [
     path('registerroster/', views.register_roster, name='registerroster'),
     path('registerstat/', views.register_stat, name='registerstat'),
     path('registerscore/', views.register_score, name='registerscore'),
+    path('viewplayer/', views.view_player, name='viewplayer'),
+    path('viewteam/', views.view_team, name='viewteam'),
+    path('viewstadium/', views.view_stadium, name='viewstadium'),
+    path('viewmatch/', views.view_match, name='viewmatch'),
+    path('viewroster/', views.view_roster, name='viewroster'),
+    path('viewstat/', views.view_stat, name='viewstat'),
+    path('viewscore/', views.view_score, name='viewscore'),
 ]

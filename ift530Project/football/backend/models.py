@@ -29,10 +29,10 @@ class Stadium(models.Model):
 class Player(models.Model):
 	fName = models.CharField(max_length=50)
 	lName = models.CharField(max_length=50)
-	mName = models.CharField(max_length=1)
+	mName = models.CharField(max_length=1, default='')
 
 	def __str__(self):
-		return( "%s, %s") % (self.fName, self.lName)
+		return( "%s, %s") % (self.lName, self.fName)
 
 
 class Matchup(models.Model):

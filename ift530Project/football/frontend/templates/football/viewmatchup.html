@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+	<title>View Player</title>
+
+
+{% endblock %}
+
+{% block body %}
+
+<div class='container'>
+	<h1>Welcome</h1>
+	<p>Here are your Matches!</p>
+		<!-- We're calling the views player object -->
+		{% if matches %}
+		    <ul class='list-group'>
+		    <!-- every line in matchups object -->
+		    {% for match in matches %}
+
+		        <li class=list-group-item><a href="/football/{{ team.id }}/">{{ matchup.homeTeamID }} vs. {{ matchup.awayTeamID}}</a></li>
+		    {% endfor %}
+		    
+		    </ul>
+		{% else %}
+
+		    <p>No matchups at the moment.</p>
+		
+		{% endif %}
+
+</div>
+
+{% endblock %}

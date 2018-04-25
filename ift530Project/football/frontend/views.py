@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, loader
 from .forms import *
 
 # Create your views here.
@@ -121,3 +121,79 @@ def register_score(request):
 
 	context = {'form': score_form}
 	return render(request, 'football/registerscore.html', context)
+
+
+def view_player(request):
+	players = Player.objects.all()
+
+	template = loader.get_template('football/viewplayer.html')
+	context = {
+		'players': players,
+	}
+	return render(request, 'football/viewplayer.html', context)
+
+
+def view_team(request):
+	teams = Team.objects.all()
+
+	template = loader.get_template('football/viewteam.html')
+
+	context = {
+		'teams': teams,
+	}
+	return render(request,'football/viewteam.html', context)
+
+
+def view_stadium(request):
+	stadiums = Stadium.objects.all()
+
+	template = loader.get_template('football/viewstadium.html')
+
+	context = {
+		'stadiums': stadiums,
+	}
+	return render(request,'football/viewstadium.html', context)
+
+
+def view_match(request):
+	matches = Matchup.objects.all()
+
+	template = loader.get_template('football/viewmatchup.html')
+
+	context = {
+		'matches': matches,
+	}
+	return render(request,'football/viewmatchup.html', context)
+
+
+def view_roster(request):
+	rosters = Roster.objects.all()
+
+	template = loader.get_template('football/viewroster.html')
+
+	context = {
+		'rosters': rosters,
+	}
+	return render(request,'football/viewroster.html', context)
+
+
+def view_stat(request):
+	stats = Stat.objects.all()
+
+	template = loader.get_template('football/viewstat.html')
+
+	context = {
+		'stats': stats,
+	}
+	return render(request,'football/viewstat.html', context)
+
+
+def view_score(request):
+	scores = Score.objects.all()
+
+	template = loader.get_template('football/viewscore.html')
+
+	context = {
+		'scores': scores,
+	}
+	return render(request,'football/viewscore.html', context)

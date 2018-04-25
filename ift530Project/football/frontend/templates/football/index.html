@@ -12,19 +12,37 @@
 	{% block body %}
 
 	<div class="container">
+		
 		<h1>Home</h1>
 		<p>Congrats, you make it home!</p>
-		
-		<div class="list-group">
-		  <a href="#" class="list-group-item list-group-item-action active">Home</a>
-		  <a href="{% url 'registerplayer' %}" class="list-group-item list-group-item-action">Register Player</a>
-		  <a href="{% url 'registerteam' %}" class="list-group-item list-group-item-action">Register Team</a>
-		  <a href="{% url 'registerstadium' %}" class="list-group-item list-group-item-action">Register Stadium</a>
-		  <a href="{% url 'registermatch' %}" class="list-group-item list-group-item-action">Register Match up</a>
-		  <a href="{% url 'registerroster' %}" class="list-group-item list-group-item-action">Register Roster</a>
-		  <a href="{% url 'registerstat' %}" class="list-group-item list-group-item-action">Register Stat</a>
-		  <a href="{% url 'registerscore' %}" class="list-group-item list-group-item-action">Register Score</a>
+		<div class="row">
+			<div class="col-md-6">
+				<div class="list-group">
+				  <a href="#" class="list-group-item list-group-item-action active">Register Data</a>
+				  <a href="{% url 'registerplayer' %}" class="list-group-item list-group-item-action">Register Player</a>
+				  <a href="{% url 'registerteam' %}" class="list-group-item list-group-item-action">Register Team</a>
+				  <a href="{% url 'registerstadium' %}" class="list-group-item list-group-item-action">Register Stadium</a>
+				  <a href="{% url 'registermatch' %}" class="list-group-item list-group-item-action">Register Match up</a>
+				  <a href="{% url 'registerroster' %}" class="list-group-item list-group-item-action">Register Roster</a>
+				  <a href="{% url 'registerstat' %}" class="list-group-item list-group-item-action">Register Stat</a>
+				  <a href="{% url 'registerscore' %}" class="list-group-item list-group-item-action">Register Score</a>
+				</div>
+			</div>
+
+			<div class="col-md-6">
+				<div class="list-group">
+				  <a href="#" class="list-group-item list-group-item-action active">View Data</a>
+				  <a href="{% url 'viewplayer' %}" class="list-group-item list-group-item-action">View Player</a>
+				  <a href="{% url 'viewteam' %}" class="list-group-item list-group-item-action">View Team</a>
+				  <a href="{% url 'viewstadium' %}" class="list-group-item list-group-item-action">View Stadium</a>
+				  <a href="{% url 'viewmatch' %}" class="list-group-item list-group-item-action">View Match up</a>
+				  <a href="{% url 'viewroster' %}" class="list-group-item list-group-item-action">View Roster</a>
+				  <a href="{% url 'viewstat' %}" class="list-group-item list-group-item-action">View Stat</a>
+				  <a href="{% url 'viewscore' %}" class="list-group-item list-group-item-action">View Score</a>
+				</div>				
+			</div>
 		</div>
+		
 
 	</div>
 

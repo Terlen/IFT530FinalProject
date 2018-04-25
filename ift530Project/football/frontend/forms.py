@@ -14,6 +14,16 @@ class register_player_form(forms.ModelForm):
 			"mName": "Middle Name"
 			}
 
+	def save(self, commit=True):
+		player = super(register_player_form, self).save(commit=False)
+		player.fName = self.cleaned_data['fName']
+		player.lName = self.cleaned_data['lName']
+
+		if commit:
+			player.save()
+
+		return player
+
 
 class register_team_form(forms.ModelForm):
 	class Meta:

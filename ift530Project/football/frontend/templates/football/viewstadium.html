@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+	<title>View Player</title>
+
+
+{% endblock %}
+
+{% block body %}
+
+<div class='container'>
+	<h1>Welcome</h1>
+	<p>Here are your Stadiums</p>
+		<!-- We're calling the views player object -->
+		{% if stadiums %}
+		    <ul class='list-group'>
+		    <!-- every line in stadiums object -->
+		    {% for stadium in stadiums %}
+
+		        <li class=list-group-item><a href="/football/{{ stadium.id }}/">{{ stadium.stadiumName }} at {{ stadium.address}}</a></li>
+		    {% endfor %}
+		    
+		    </ul>
+		{% else %}
+
+		    <p>No stadiums at the moment.</p>
+		
+		{% endif %}
+
+</div>
+
+{% endblock %}
