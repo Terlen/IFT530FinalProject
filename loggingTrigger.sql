@@ -2,6 +2,9 @@
 
 -- Audit Table to keep track of changes
 
+USE footballLeague;
+GO
+
 IF NOT EXISTS (SELECT * FROM sysobjects WHERE id = OBJECT_ID(N'[dbo].[Audit]') 
                AND OBJECTPROPERTY(id, N'IsUserTable') = 1)
        CREATE TABLE Audit 
