@@ -1,0 +1,4 @@
+Create problem statement (Fetch statistics and scores for all matches played by a team)
+
+Include year in matchup table to allow filtering by season
+
