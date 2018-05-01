@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+	<title>Register Stat</title>
+
+
+{% endblock %}
+
+{% block body %}
+
+<div class='container'>
+	<h1>Welcome</h1>
+	<p>Register Stat here</p>
+	<form name='registerstat' action="{% url 'registerstat' %}" method="POST">
+		
+		{% csrf_token %}
+		{{ form.as_p }}
+
+		<input type='submit' value='Submit'></input>
+	</form>
+</div>
+
+{% endblock %}
