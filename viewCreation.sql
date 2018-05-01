@@ -1,5 +1,5 @@
 use footballLeague;
-GO;
+
 CREATE VIEW upcomingGames
 AS
 SELECT Date as 'Date', Home.Name as 'Home Team', Away.Name as 'Away Team', Loc.StadiumName as 'Location'
@@ -11,7 +11,7 @@ ON Matchup.AwayTeamID = Away.TeamID
 JOIN Stadium as Loc
 ON Matchup.StadiumID = Loc.StadiumID
 WHERE Date > GETDATE()
-GO;
+
 
 CREATE VIEW winLoss
 AS
@@ -40,5 +40,4 @@ FROM MatchesPlayed
 Left JOIN MatchesWon ON TeamID = ID
 JOIN Team ON Team.TeamID = ID
 GROUP BY Name, Wins
-ORDER BY Name
 
